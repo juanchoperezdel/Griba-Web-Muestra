@@ -26,7 +26,6 @@ export function Testimonials() {
   const stats = [
     { value: "+100", label: "concesionarios en Argentina" },
     { value: "10 años", label: "en el mercado" },
-    { value: "92–95%", label: "de retención" },
     { value: "15 provincias", label: "con presencia" },
   ];
 
@@ -87,7 +86,7 @@ export function Testimonials() {
 
         {/* Strip de métricas */}
         <div className="bg-white border border-slate-100 rounded-[28px] p-6 sm:p-8 shadow-sm">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-4">
+          <div className="grid grid-cols-3 gap-6 sm:gap-4">
             {stats.map((stat, idx) => (
               <div key={idx} className="text-center">
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-1">

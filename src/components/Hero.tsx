@@ -22,17 +22,18 @@ export function Hero() {
           className="flex flex-col items-center"
         >
           <h1 className="text-5xl sm:text-6xl lg:text-[78px] font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.02]">
-            Tu concesionaria creció. <br className="hidden md:block" />
-            Tu sistema{" "}
+            Cada mes dejás comisiones <br className="hidden md:block" />
+            en la mesa.{" "}
             <span className="serif-display italic font-normal text-brand-600">
-              no.
+              Y te enterás <br className="hidden md:block" />
+              cuando ya es tarde.
             </span>
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Ventas, plan de ahorro, cartera, adjudicaciones, scoring e integraciones con fábrica.
-            Todo en un único sistema diseñado para concesionarias que ya no pueden seguir operando
-            con Excel, procesos manuales y herramientas desconectadas.
+            Cuotas mal cargadas en un Excel. Suscriptores en mora que nadie detectó.
+            Reportes que llegan después del cierre. Griba unifica ventas, plan de ahorro
+            y cartera en una sola pantalla — para que el día 30 ya esté decidido, no improvisado.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
@@ -56,9 +57,7 @@ export function Hero() {
             <span className="text-slate-600">
               <strong className="text-slate-900">10 años</strong>
               <span className="mx-2 text-slate-300">·</span>
-              100+ concesionarios oficiales
-              <span className="mx-2 text-slate-300">·</span>
-              Retención 92–95%
+              100+ concesionarios oficiales en Argentina
             </span>
           </div>
         </motion.div>
