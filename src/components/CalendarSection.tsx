@@ -1,13 +1,38 @@
 import { motion } from "motion/react";
 import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
-export function CalendarSection() {
-  const benefits = [
-    "Auditoría rápida de tu proceso comercial actual (ventas + plan de ahorro)",
-    "Estimación de fuga operativa y comisiones perdidas",
-    "Demo de Griba con marcas que ya integramos",
-    "Hablás con un consultor del equipo, no con un comercial junior",
-  ];
+type Version = "v1" | "v2";
+
+const copyByVersion = {
+  v1: {
+    h2Line1: "Mostranos cómo manejan hoy la operación.",
+    h2Line2Highlight: "Te mostramos cómo cambia.",
+    subhead:
+      "En una llamada de 30 minutos vemos juntos dónde se está perdiendo tiempo, qué procesos pueden automatizar y cómo centralizar toda la operación en un solo sistema. Sin compromiso, sin venta agresiva.",
+    benefits: [
+      "Auditoría rápida de tu proceso comercial actual (ventas + plan de ahorro)",
+      "Estimación de fuga operativa y comisiones perdidas",
+      "Demo de Griba con marcas que ya integramos",
+      "Hablás con un consultor del equipo, no con un comercial junior",
+    ],
+  },
+  v2: {
+    h2Line1: "Mostranos cómo operan hoy.",
+    h2Line2Highlight: "Te decimos cuánta plata se va.",
+    subhead:
+      "En 30 minutos detectamos las fugas reales de tu operación: cartera, comisiones y horas de equipo. Salís con un número, no con una venta.",
+    benefits: [
+      "Auditoría rápida de tu proceso comercial (ventas + plan de ahorro)",
+      "Número estimado de plata que se está fugando este mes",
+      "Demo de Griba con marcas que ya integramos",
+      "Hablás con un consultor del equipo, no con un comercial junior",
+    ],
+  },
+} as const;
+
+export function CalendarSection({ version = "v1" }: { version?: Version }) {
+  const copy = copyByVersion[version];
+  const benefits = copy.benefits;
 
   return (
     <section id="calendario" className="bg-slate-950 py-24 relative overflow-hidden z-20">
@@ -28,14 +53,14 @@ export function CalendarSection() {
           >
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.02] tracking-tight">
-              Mostranos cómo manejan hoy la operación. <br className="hidden md:block" />
+              {copy.h2Line1} <br className="hidden md:block" />
               <span className="serif-display italic font-normal text-brand-300">
-                Te mostramos cómo cambia.
+                {copy.h2Line2Highlight}
               </span>
             </h2>
 
             <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-              En una llamada de 30 minutos vemos juntos dónde se está perdiendo tiempo, qué procesos pueden automatizar y cómo centralizar toda la operación en un solo sistema. <strong className="text-white">Sin compromiso, sin venta agresiva.</strong>
+              {copy.subhead}
             </p>
 
             <ul className="mb-10 space-y-4 text-left mx-auto lg:mx-0 max-w-md">

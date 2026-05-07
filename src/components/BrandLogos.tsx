@@ -1,3 +1,4 @@
+import type { SyntheticEvent } from "react";
 import { InfiniteSlider } from "./ui/infinite-slider";
 import { ProgressiveBlur } from "./ui/progressive-blur";
 
@@ -15,6 +16,17 @@ const brands = [
   { name: "Mercedes-Benz", domain: "mercedes-benz.com" },
   { name: "Honda", domain: "honda.com" },
 ];
+
+function handleLogoError(e: SyntheticEvent<HTMLImageElement>, domain: string) {
+  const img = e.currentTarget;
+  const stage = img.dataset.fallbackStage || "0";
+  if (stage === "0") {
+    img.dataset.fallbackStage = "1";
+    img.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+  } else {
+    img.style.display = "none";
+  }
+}
 
 export function BrandLogos() {
   return (
@@ -35,6 +47,7 @@ export function BrandLogos() {
                   src={`https://logo.clearbit.com/${brand.domain}?size=128`}
                   alt={brand.name}
                   title={brand.name}
+                  onError={(e) => handleLogoError(e, brand.domain)}
                   className="h-9 w-auto max-w-[140px] object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
                   loading="lazy"
                 />

@@ -1,7 +1,25 @@
 import { motion } from "motion/react";
 import { LayoutDashboard, BarChart3, Zap, Wrench } from "lucide-react";
 
-export function Features() {
+type Version = "v1" | "v2";
+
+const copyByVersion = {
+  v1: {
+    h2Line1: "Pasá de apagar incendios",
+    h2Line2Pre: "a tener",
+    h2Line2Highlight: "control real.",
+    subhead: "Cuatro cosas que Griba hace por vos todos los días.",
+  },
+  v2: {
+    h2Line1: "Cuatro cosas que dejan de costarte",
+    h2Line2Pre: "plata",
+    h2Line2Highlight: "desde el primer mes.",
+    subhead: "Sin que nadie tenga que abrir un Excel.",
+  },
+} as const;
+
+export function Features({ version = "v1" }: { version?: Version }) {
+  const copy = copyByVersion[version];
   const features = [
     {
       icon: <LayoutDashboard className="h-5 w-5 text-brand-600" />,
@@ -34,14 +52,14 @@ export function Features() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.05]">
-            Pasá de apagar incendios <br className="hidden md:block" />
-            a tener{" "}
+            {copy.h2Line1} <br className="hidden md:block" />
+            {copy.h2Line2Pre}{" "}
             <span className="serif-display italic font-normal text-brand-600">
-              control real.
+              {copy.h2Line2Highlight}
             </span>
           </h2>
           <p className="text-lg text-slate-500">
-            Cuatro cosas que Griba hace por vos todos los días.
+            {copy.subhead}
           </p>
         </div>
 

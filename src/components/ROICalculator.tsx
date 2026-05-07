@@ -2,7 +2,23 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { TrendingUp, Clock } from "lucide-react";
 
-export function ROICalculator() {
+type Version = "v1" | "v2";
+
+const copyByVersion = {
+  v1: {
+    h2Line1: "¿Cuánto te está costando",
+    h2Line2Pre: "seguir",
+    h2Line2Highlight: "operando manualmente?",
+  },
+  v2: {
+    h2Line1: "¿Cuánta plata se te",
+    h2Line2Pre: "está yendo",
+    h2Line2Highlight: "este mes?",
+  },
+} as const;
+
+export function ROICalculator({ version = "v1" }: { version?: Version }) {
+  const copy = copyByVersion[version];
   const [volumen, setVolumen] = useState(500);
 
   // Estimaciones del sector:
@@ -25,10 +41,10 @@ export function ROICalculator() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.05]">
-            ¿Cuánto te está costando <br className="hidden md:block" />
-            seguir{" "}
+            {copy.h2Line1} <br className="hidden md:block" />
+            {copy.h2Line2Pre}{" "}
             <span className="serif-display italic font-normal text-slate-700">
-              operando manualmente?
+              {copy.h2Line2Highlight}
             </span>
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">

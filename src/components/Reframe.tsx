@@ -1,7 +1,29 @@
 import { motion } from "motion/react";
 import { X, Check } from "lucide-react";
 
-export function Reframe() {
+type Version = "v1" | "v2";
+
+const copyByVersion = {
+  v1: {
+    h2Line1: "El sistema que hoy usás",
+    h2Line2Pre: "ya no",
+    h2Line2Highlight: "soporta tu operación.",
+    subhead: "No es tu equipo. Es la operación.",
+    closingPre: "Y mientras tanto,",
+    closingHighlight: "las comisiones se escapan.",
+  },
+  v2: {
+    h2Line1: "Tu sistema no te avisa",
+    h2Line2Pre: "cuando",
+    h2Line2Highlight: "se está yendo la plata.",
+    subhead: "No es tu equipo. Es el sistema con el que opera.",
+    closingPre: "Y a fin de mes,",
+    closingHighlight: "la cuenta la pagás vos.",
+  },
+} as const;
+
+export function Reframe({ version = "v1" }: { version?: Version }) {
+  const copy = copyByVersion[version];
   const hoy = [
     "Excel por todos lados",
     "Reportes manuales los domingos",
@@ -27,14 +49,14 @@ export function Reframe() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.05]">
-            El sistema que hoy usás <br className="hidden md:block" />
-            ya no{" "}
+            {copy.h2Line1} <br className="hidden md:block" />
+            {copy.h2Line2Pre}{" "}
             <span className="serif-display italic font-normal text-slate-700">
-              soporta tu operación.
+              {copy.h2Line2Highlight}
             </span>
           </h2>
           <p className="text-lg text-slate-500 font-medium">
-            No es tu equipo. Es la operación.
+            {copy.subhead}
           </p>
         </div>
 
@@ -97,8 +119,8 @@ export function Reframe() {
         </div>
 
         <p className="text-center mt-12 text-xl sm:text-2xl font-medium text-slate-700">
-          Y mientras tanto,{" "}
-          <span className="serif-display italic text-red-500">las comisiones se escapan.</span>
+          {copy.closingPre}{" "}
+          <span className="serif-display italic text-red-500">{copy.closingHighlight}</span>
         </p>
       </div>
     </section>

@@ -1,7 +1,23 @@
 import { motion } from "motion/react";
 import { Gauge, ShieldCheck, Plug, Workflow } from "lucide-react";
 
-export function PlanAhorro() {
+type Version = "v1" | "v2";
+
+const copyByVersion = {
+  v1: {
+    subheadShort: "Y ahí es donde Griba hace la diferencia.",
+    body:
+      "No hablamos de \"un módulo más\" entre diez. Hablamos de la operativa completa: cartera, adjudicaciones, scoring, cumplimiento, suscriptores, cuotas, fidelización e integraciones nativas con tu intranet de fábrica. Todo conectado, en tiempo real.",
+  },
+  v2: {
+    subheadShort: "Y ahí es donde más comisiones se escapan.",
+    body:
+      "Cuotas mal cargadas, cartera mal medida, suscriptores que caen sin aviso. Cada error es comisión que la fábrica no te paga el mes siguiente. Griba lo controla por vos — cartera, adjudicaciones, scoring, cumplimiento, todo en tiempo real.",
+  },
+} as const;
+
+export function PlanAhorro({ version = "v1" }: { version?: Version }) {
+  const copy = copyByVersion[version];
   const subFeatures = [
     {
       icon: <Gauge className="h-5 w-5 text-brand-600" />,
@@ -48,13 +64,10 @@ export function PlanAhorro() {
               </span>
             </h2>
             <p className="text-lg text-slate-500 font-medium mb-6">
-              Y ahí es donde Griba hace la diferencia.
+              {copy.subheadShort}
             </p>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
-              No hablamos de "un módulo más" entre diez. Hablamos de la operativa
-              completa: cartera, adjudicaciones, scoring, cumplimiento, suscriptores,
-              cuotas, fidelización e integraciones nativas con tu intranet de fábrica.
-              Todo conectado, en tiempo real.
+              {copy.body}
             </p>
 
             <div className="hidden lg:block border-l-2 border-brand-100 pl-5 py-2">

@@ -1,6 +1,26 @@
 import { motion } from "motion/react";
 
-export function Pains() {
+type Version = "v1" | "v2";
+
+const copyByVersion = {
+  v1: {
+    h2Line1: "Cuatro síntomas",
+    h2Line2: "de que tu sistema",
+    h2Line3Highlight: "ya no alcanza.",
+    subhead:
+      "Cada uno te cuesta horas, comisiones o tranquilidad. Si reconocés más de dos en tu operación, la pérdida no es hipotética — es mensual.",
+  },
+  v2: {
+    h2Line1: "Cuatro fugas",
+    h2Line2: "que no estás",
+    h2Line3Highlight: "midiendo.",
+    subhead:
+      "Cada una te saca plata todos los meses. Y ninguna aparece en un reporte — porque no podés actuar sobre lo que no ves.",
+  },
+} as const;
+
+export function Pains({ version = "v1" }: { version?: Version }) {
+  const copy = copyByVersion[version];
   const pains = [
     {
       number: "01",
@@ -50,18 +70,16 @@ export function Pains() {
         <div className="grid lg:grid-cols-12 gap-12 mb-20">
           <div className="lg:col-span-5">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.05]">
-              Cuatro síntomas <br className="hidden md:block" />
-              de que tu sistema <br className="hidden md:block" />
+              {copy.h2Line1} <br className="hidden md:block" />
+              {copy.h2Line2} <br className="hidden md:block" />
               <span className="serif-display italic font-normal text-slate-700">
-                ya no alcanza.
+                {copy.h2Line3Highlight}
               </span>
             </h2>
           </div>
           <div className="lg:col-span-7 lg:pt-3">
             <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-xl">
-              Cada uno te cuesta horas, comisiones o tranquilidad.
-              Si reconocés más de dos en tu operación, la pérdida no es
-              hipotética — es mensual.
+              {copy.subhead}
             </p>
           </div>
         </div>

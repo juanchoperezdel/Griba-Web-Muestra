@@ -1,7 +1,23 @@
 import { motion } from "motion/react";
 import { Quote, Star } from "lucide-react";
 
-export function Testimonials() {
+type Version = "v1" | "v2";
+
+const copyByVersion = {
+  v1: {
+    h2Line1: "Los concesionarios que más crecen",
+    h2Line2Pre: "ya",
+    h2Line2Highlight: "dejaron atrás el Excel.",
+  },
+  v2: {
+    h2Line1: "Los que dejaron",
+    h2Line2Pre: "de",
+    h2Line2Highlight: "perder plata todos los meses.",
+  },
+} as const;
+
+export function Testimonials({ version = "v1" }: { version?: Version }) {
+  const copy = copyByVersion[version];
   const testimonials = [
     {
       text: "El día 15 ya sé si voy a cumplir el objetivo de fábrica. Antes esperaba al cierre y rezaba. Recuperamos 15 horas semanales del equipo y bajamos varios puntos la morosidad de cartera.",
@@ -37,10 +53,10 @@ export function Testimonials() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.05]">
-            Los concesionarios que más crecen <br className="hidden md:block" />
-            ya{" "}
+            {copy.h2Line1} <br className="hidden md:block" />
+            {copy.h2Line2Pre}{" "}
             <span className="serif-display italic font-normal text-slate-700">
-              dejaron atrás el Excel.
+              {copy.h2Line2Highlight}
             </span>
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
