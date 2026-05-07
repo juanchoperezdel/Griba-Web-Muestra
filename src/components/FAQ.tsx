@@ -14,42 +14,27 @@ export function FAQ() {
     {
       question: "Ya tenemos sistema (Tecnom, Asofix o uno propio). ¿Por qué cambiarme?",
       answer:
-        "Tecnom es un CRM general que apunta al vendedor. Asofix incluye plan de ahorro como un módulo más entre diez. Griba está hecho para operar la concesionaria entera, con plan de ahorro como pilar central. Hacemos casos de migración con paralelo de 30 días, así no perdés nada en el camino.",
+        "Tecnom es un CRM general que apunta al vendedor. Asofix incluye plan de ahorro como un módulo más entre varios. Griba está hecho para operar la concesionaria entera, con plan de ahorro como pilar central. Hacemos casos de migración con paralelo, así no perdés nada en el camino.",
     },
     {
       question: "Mi fábrica no está en su lista de integradas. ¿Qué pasa?",
       answer:
-        "Volkswagen, Renault y Stellantis están productivas. El resto de las marcas se integran como parte del onboarding sin costo extra. El tiempo típico de integración a una nueva fábrica es entre 5 y 15 días.",
+        "Volkswagen, Renault y Stellantis ya están productivas. El resto de las marcas se integran como parte del onboarding y lo coordinamos juntos según el caso.",
     },
     {
       question: "¿Cuánto cuesta?",
       answer:
-        "Pricing escalonado por volumen y por marcas que manejás. Un concesionario mediano va entre USD 2.000 y 3.000 mensuales. La calculadora de arriba te da una idea de lo que recuperás. El número exacto te lo damos en el diagnóstico, contra los datos reales de tu operación.",
+        "El pricing es escalonado según volumen de operación y marcas que manejás — no es un precio único. La calculadora de arriba te da una idea del impacto sobre tu cifra. El número exacto te lo pasamos en el diagnóstico, contra los datos reales de tu concesionaria.",
     },
     {
       question: "Mi equipo no es muy técnico. ¿Van a poder usarlo?",
       answer:
-        "El onboarding tarda 1-2 días para equipos con la operativa aceitada. Consultores propios (no chatbots, no freelancers) acompañan al equipo todo el primer mes. Nuestra retención está entre 92 y 95% en 10 años: si fuera difícil de usar, no se quedarían.",
+        "Te acompañan consultores propios (no chatbots, no freelancers) durante todo el onboarding y después. Si fuera difícil de usar, no tendríamos la retención que tenemos en 10 años.",
     },
     {
       question: "Ya probé un sistema antes y fue una desilusión. ¿Por qué este sería distinto?",
       answer:
-        "Equipo propio en Argentina, no soporte tercerizado. 10 años en el sector, +100 concesionarios oficiales activos. Tenemos casos de migración desde malas experiencias previas. Nuestro churn es 5-8% en 10 años — el resto se quedó.",
-    },
-    {
-      question: "Soy un concesionario chico. ¿Esto es para empresas grandes?",
-      answer:
-        "No. Griba va de 10 a 500+ empleados. El producto es el mismo y escala con la empresa. La operativa de plan de ahorro y de ventas es la misma a cualquier escala — solo cambia el volumen.",
-    },
-    {
-      question: "¿Qué pasa con mis datos si decido salir? ¿Vendor lock-in?",
-      answer:
-        "Cero lock-in. Export completo de toda tu información en formato estándar documentado. Si querés, firmamos NDA bilateral y SLA de exportación antes de empezar.",
-    },
-    {
-      question: "Soy IT o COO. ¿Tienen documentación API y webhooks?",
-      answer:
-        "Sí. APIs documentadas, webhooks para eventos críticos (adjudicación, pago, cambio de estado), arquitectura cloud-nativa con backups diarios y plan DR. Si querés, agendá una demo técnica directa con nuestros ingenieros, sin comerciales en el medio.",
+        "Equipo propio en Argentina, no soporte tercerizado. 10 años en el sector, más de 100 concesionarios oficiales activos. Tenemos casos de migración desde malas experiencias previas — los podemos compartir en el diagnóstico.",
     },
   ];
 

@@ -32,41 +32,23 @@ export function Layout({ children }: { children: ReactNode }) {
         {children}
       </main>
 
-      <footer className="bg-[#0a0a0a] pt-16 pb-8 border-t border-slate-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl grid md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-2">
-            <div className="text-white font-extrabold text-2xl tracking-tighter flex items-center gap-1 mb-4">
+      <footer className="bg-[#0a0a0a] py-12 border-t border-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <div className="max-w-md">
+            <div className="text-white font-extrabold text-2xl tracking-tighter flex items-center gap-1 mb-3">
               <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
               GRIBA
             </div>
-            <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
-              El software que entiende cómo funciona una concesionaria de verdad. Ventas, plan de ahorro y operación completa, integrado con tu fábrica.
+            <p className="text-slate-400 text-sm leading-relaxed">
+              El software que entiende cómo funciona una concesionaria de verdad.
             </p>
           </div>
-          <div>
-            <h4 className="text-white font-semibold mb-6">Navegación</h4>
-            <div className="flex flex-col gap-3">
-              <a href="#solucion" className="text-slate-400 hover:text-white text-sm transition-colors">Cómo funciona</a>
-              <a href="#plan-ahorro" className="text-slate-400 hover:text-white text-sm transition-colors">Plan de ahorro</a>
-              <a href="#calculadora" className="text-slate-400 hover:text-white text-sm transition-colors">Calculadora ROI</a>
-              <a href="#faq" className="text-slate-400 hover:text-white text-sm transition-colors">Preguntas frecuentes</a>
-              <a href="#calendario" className="text-slate-400 hover:text-white text-sm transition-colors">Agendar demo</a>
+          <div className="flex flex-col items-start md:items-end gap-3 text-slate-500 text-xs">
+            <div className="flex gap-4">
+              <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+              <a href="#" className="hover:text-white transition-colors">Instagram</a>
             </div>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-6">Empresa</h4>
-            <div className="flex flex-col gap-3">
-              <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Casos de éxito</a>
-              <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Privacidad y legal</a>
-              <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Contacto</a>
-            </div>
-          </div>
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row justify-between items-center text-slate-500 text-xs border-t border-slate-800 pt-8 gap-4">
-          <span>&copy; {new Date().getFullYear()} Griba S.A.S. Todos los derechos reservados.</span>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-white">LinkedIn</a>
-            <a href="#" className="hover:text-white">Instagram</a>
+            <span>&copy; {new Date().getFullYear()} Griba S.A.S. Todos los derechos reservados.</span>
           </div>
         </div>
       </footer>

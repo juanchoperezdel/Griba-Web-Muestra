@@ -51,20 +51,15 @@ export function Hero() {
           </div>
 
           {/* Social Proof Text */}
-          <div className="mt-12 flex items-center justify-center gap-4 text-sm text-slate-500 font-medium">
-            <div className="flex -space-x-3">
-              {[10, 12, 15, 20].map((i, idx) => (
-                <div key={idx} className="h-10 w-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden shadow-sm">
-                  <img src={`https://i.pravatar.cc/150?img=${i}`} alt="user avatar" className="h-full w-full object-cover" />
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col items-start translate-y-0.5 text-left">
-              <div className="flex text-amber-400 text-sm tracking-tighter">★★★★★</div>
-              <span className="text-slate-600">
-                <strong className="text-slate-900">10 años</strong> · 100+ concesionarios oficiales · Retención 92–95%
-              </span>
-            </div>
+          <div className="mt-12 inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-sm text-slate-500 font-medium">
+            <div className="flex text-amber-400 text-base tracking-tighter">★★★★★</div>
+            <span className="text-slate-600">
+              <strong className="text-slate-900">10 años</strong>
+              <span className="mx-2 text-slate-300">·</span>
+              100+ concesionarios oficiales
+              <span className="mx-2 text-slate-300">·</span>
+              Retención 92–95%
+            </span>
           </div>
         </motion.div>
       </div>
