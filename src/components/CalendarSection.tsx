@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import { ShieldCheck, Calendar as CalendarIcon, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
 export function CalendarSection() {
   const benefits = [
-    "Auditoría de tu proceso comercial actual",
-    "Análisis de fuga de capital en tus Planes",
-    "Demostración de la plataforma Griba en vivo",
-    "Sin compromisos de compra"
+    "Auditoría rápida de tu proceso comercial actual (ventas + plan de ahorro)",
+    "Estimación de fuga operativa y comisiones perdidas",
+    "Demo de Griba con marcas que ya integramos",
+    "Hablás con un consultor del equipo, no con un comercial junior",
   ];
 
   return (
@@ -27,12 +27,15 @@ export function CalendarSection() {
             className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left"
           >
 
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-[1.1]">
-              Agendá tu Diagnóstico Operativo <span className="text-brand-400">Gratuito</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.02] tracking-tight">
+              Mostranos cómo manejan hoy la operación. <br className="hidden md:block" />
+              <span className="serif-display italic font-normal text-brand-300">
+                Te mostramos cómo cambia.
+              </span>
             </h2>
-            
+
             <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-              En esta llamada de 30 minutos, mapearemos tus procesos actuales y evaluaremos si Griba es el <strong className="text-white">fit adecuado</strong> para aumentar la rentabilidad de tu concesionario.
+              En una llamada de 30 minutos vemos juntos dónde se está perdiendo tiempo, qué procesos pueden automatizar y cómo centralizar toda la operación en un solo sistema. <strong className="text-white">Sin compromiso, sin venta agresiva.</strong>
             </p>
 
             <ul className="mb-10 space-y-4 text-left mx-auto lg:mx-0 max-w-md">
@@ -47,9 +50,9 @@ export function CalendarSection() {
             <div className="inline-flex items-start gap-4 bg-slate-900/50 p-6 gap-3 rounded-2xl border border-slate-800 text-left">
               <ShieldCheck className="h-8 w-8 text-emerald-400 shrink-0 mt-1" />
               <div>
-                <h4 className="text-white font-semibold mb-1">Capacidad Limitada</h4>
+                <h4 className="text-white font-semibold mb-1">Capacidad limitada</h4>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Dado nuestro modelo de onboarding in-house de alta calidad, actualmente solo podemos tomar <strong className="text-slate-200">4 nuevas implementaciones</strong> por mes.
+                  Onboarding in-house = solo tomamos <strong className="text-slate-200">4 nuevas implementaciones</strong> por mes. Si querés que el del próximo mes seas vos, agendá ahora.
                 </p>
               </div>
             </div>

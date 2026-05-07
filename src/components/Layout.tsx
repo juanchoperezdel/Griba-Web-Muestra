@@ -40,22 +40,25 @@ export function Layout({ children }: { children: ReactNode }) {
               GRIBA
             </div>
             <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
-              Software de alto rendimiento para concesionarios automotrices. Ayudamos a tu equipo a operar de forma más inteligente, escalable y con menos fricción manual.
+              El software que entiende cómo funciona una concesionaria de verdad. Ventas, plan de ahorro y operación completa, integrado con tu fábrica.
             </p>
           </div>
           <div>
             <h4 className="text-white font-semibold mb-6">Navegación</h4>
             <div className="flex flex-col gap-3">
-              <a href="#solucion" className="text-slate-400 hover:text-white text-sm transition-colors">Características</a>
+              <a href="#solucion" className="text-slate-400 hover:text-white text-sm transition-colors">Cómo funciona</a>
+              <a href="#plan-ahorro" className="text-slate-400 hover:text-white text-sm transition-colors">Plan de ahorro</a>
               <a href="#calculadora" className="text-slate-400 hover:text-white text-sm transition-colors">Calculadora ROI</a>
-              <a href="#calendario" className="text-slate-400 hover:text-white text-sm transition-colors">Contacto Comercial</a>
+              <a href="#faq" className="text-slate-400 hover:text-white text-sm transition-colors">Preguntas frecuentes</a>
+              <a href="#calendario" className="text-slate-400 hover:text-white text-sm transition-colors">Agendar demo</a>
             </div>
           </div>
           <div>
             <h4 className="text-white font-semibold mb-6">Empresa</h4>
             <div className="flex flex-col gap-3">
-              <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Casos de Éxito</a>
-              <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Privacidad y Legal</a>
+              <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Casos de éxito</a>
+              <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Privacidad y legal</a>
+              <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Contacto</a>
             </div>
           </div>
         </div>

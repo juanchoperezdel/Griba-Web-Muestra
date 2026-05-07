@@ -1,39 +1,47 @@
 import { motion } from "motion/react";
-import { CheckCircle2, Zap, Settings, Activity } from "lucide-react";
+import { LayoutDashboard, BarChart3, Zap, Wrench } from "lucide-react";
 
 export function Features() {
   const features = [
     {
-      icon: <Activity className="h-5 w-5 text-brand-600" />,
-      title: "Dashboard en Tiempo Real",
-      description: "El día 15 vas a saber si llegás al volumen de terminal. Y si no, tenés tiempo para corregir el rumbo."
+      icon: <LayoutDashboard className="h-5 w-5 text-brand-600" />,
+      title: "Operación 360 unificada",
+      description:
+        "Ventas 0km, usados, plan de ahorro y posventa en un solo sistema. Tu equipo deja de saltar entre cinco herramientas.",
     },
     {
-      icon: <CheckCircle2 className="h-5 w-5 text-brand-600" />,
-      title: "Scoring de Cartera",
-      description: "Identificá suscriptores en riesgo y protejé tus fees automatizando la fidelización."
+      icon: <BarChart3 className="h-5 w-5 text-brand-600" />,
+      title: "Decisiones con datos en vivo",
+      description:
+        "Cumplimiento, calidad de cartera, leads, conversiones. Dashboards configurables por sucursal y marca.",
     },
     {
       icon: <Zap className="h-5 w-5 text-brand-600" />,
-      title: "Integraciones Nativas",
-      description: "Conexiones probadas con Volkswagen, Renault, Stellantis. Descargas automáticas."
+      title: "Automatizaciones que ahorran tiempo",
+      description:
+        "Descargas automáticas de fábrica, alertas de riesgo en cartera, follow-up al adjudicado, integraciones con ARCA y Mercado Libre.",
     },
     {
-      icon: <Settings className="h-5 w-5 text-brand-600" />,
-      title: "Software a tu medida",
-      description: "Ajustamos Griba a tu flujo puntual. Implementación robusta en días, no en meses."
-    }
+      icon: <Wrench className="h-5 w-5 text-brand-600" />,
+      title: "Implementación in-house en días",
+      description:
+        "Equipo propio (no freelancers). Migración asistida + paralelo de 30 días. Soporte continuo con personas reales.",
+    },
   ];
 
   return (
     <section className="bg-white py-24 relative overflow-hidden" id="solucion">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-            Claridad. Velocidad. Resultados.
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.05]">
+            Pasá de apagar incendios <br className="hidden md:block" />
+            a tener{" "}
+            <span className="serif-display italic font-normal text-brand-600">
+              control real.
+            </span>
           </h2>
           <p className="text-lg text-slate-500">
-            Griba unifica Ventas y Planes de Ahorro para que dejes de lado las tareas repetitivas y enfoques a tus equipos en vender.
+            Cuatro cosas que Griba hace por vos todos los días.
           </p>
         </div>
 
@@ -51,7 +59,7 @@ export function Features() {
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{feature.description}</p>
+              <p className="text-slate-500 text-sm sm:text-base leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>
