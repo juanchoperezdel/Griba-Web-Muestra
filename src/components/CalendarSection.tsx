@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "motion/react";
 import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
@@ -33,6 +34,18 @@ const copyByVersion = {
 export function CalendarSection({ version = "v1" }: { version?: Version }) {
   const copy = copyByVersion[version];
   const benefits = copy.benefits;
+
+  // Cargar el script de embed de LeadConnector una sola vez
+  useEffect(() => {
+    const scriptId = "msgsndr-form-embed";
+    if (document.getElementById(scriptId)) return;
+
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <section id="calendario" className="bg-slate-950 py-24 relative overflow-hidden z-20">
@@ -93,22 +106,17 @@ export function CalendarSection({ version = "v1" }: { version?: Version }) {
           >
             <div className="bg-white rounded-3xl overflow-hidden shadow-2xl p-1 relative min-h-[650px] border-[8px] border-slate-900/50 backdrop-blur-sm">
               <div className="absolute top-0 left-0 w-full h-full bg-white rounded-[20px] flex flex-col items-center justify-center p-6 text-center z-0">
-                 {/* Loading/Fallback state clearly explaining to the developer */}
-                 <div className="animate-pulse bg-slate-100 rounded-full h-16 w-16 mb-4"></div>
-                 <p className="text-slate-500 font-medium">Cargando calendario...</p>
-                 <p className="text-xs text-slate-400 mt-2 max-w-[250px]">
-                    Si ves esto en producción, reemplazá el src del iframe con tu enlace real de Calendly o Hubspot.
-                 </p>
+                <div className="animate-pulse bg-slate-100 rounded-full h-16 w-16 mb-4"></div>
+                <p className="text-slate-500 font-medium">Cargando calendario...</p>
               </div>
 
-              {/* The Actual Iframe */}
-              <iframe 
-                src="https://calendly.com/griba/diagnostico" 
-                width="100%" 
-                height="650" 
-                frameBorder="0"
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/booking/ZZBJGS0BBT56DEyRM5t5"
+                style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "650px" }}
+                scrolling="no"
+                id="ZZBJGS0BBT56DEyRM5t5_1779121777783"
                 className="relative z-10 bg-white rounded-[20px]"
-                title="Agenda tu diagnóstico"
+                title="Agendá tu diagnóstico"
               ></iframe>
             </div>
           </motion.div>
