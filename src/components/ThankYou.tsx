@@ -60,7 +60,7 @@ export function ThankYou() {
             nuestro equipo se pone en contacto con vos.
           </p>
 
-          <div className="w-full grid gap-4 sm:gap-5 mb-12">
+          <div className="w-full grid gap-4 sm:gap-5">
             {nextSteps.map((step, idx) => (
               <motion.div
                 key={idx}
@@ -83,13 +83,6 @@ export function ThankYou() {
               </motion.div>
             ))}
           </div>
-
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-full bg-white border border-slate-200 px-8 py-3.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm"
-          >
-            Volver a la home
-          </a>
         </motion.div>
       </div>
     </section>
