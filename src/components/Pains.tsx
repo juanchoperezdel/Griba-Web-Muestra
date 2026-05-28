@@ -1,14 +1,26 @@
 import { motion } from "motion/react";
 
-type Version = "v1" | "v2";
+type Version = "v1" | "v2" | "v3";
 
-const copyByVersion = {
+type Pain4Override = { title: string; bullets: string[] } | null;
+
+const copyByVersion: Record<
+  Version,
+  {
+    h2Line1: string;
+    h2Line2: string;
+    h2Line3Highlight: string;
+    subhead: string;
+    pain4Override: Pain4Override;
+  }
+> = {
   v1: {
     h2Line1: "Cuatro síntomas",
     h2Line2: "de que tu sistema",
     h2Line3Highlight: "ya no alcanza.",
     subhead:
       "Cada uno te cuesta horas, comisiones o tranquilidad. Si reconocés más de dos en tu operación, la pérdida no es hipotética — es mensual.",
+    pain4Override: null,
   },
   v2: {
     h2Line1: "Cuatro fugas",
@@ -16,8 +28,25 @@ const copyByVersion = {
     h2Line3Highlight: "midiendo.",
     subhead:
       "Cada una te saca plata todos los meses. Y ninguna aparece en un reporte — porque no podés actuar sobre lo que no ves.",
+    pain4Override: null,
   },
-} as const;
+  v3: {
+    h2Line1: "Cuatro puntos ciegos",
+    h2Line2: "que te cuestan",
+    h2Line3Highlight: "todos los meses.",
+    subhead:
+      "Ninguno aparece en un reporte. Por eso es difícil actuar antes de que sea tarde — y por eso vuelve a pasar mes tras mes.",
+    pain4Override: {
+      title: "El plan de ahorro lo manejás a mano.",
+      bullets: [
+        "Tu módulo más rentable, dependiendo de planillas",
+        "Datos cargados a mano que no reflejan la realidad de la cartera",
+        "Adjudicados que se pierden entre archivos",
+        "Bonos de fábrica que no se liquidan porque los reportes llegan tarde",
+      ],
+    },
+  },
+};
 
 export function Pains({ version = "v1" }: { version?: Version }) {
   const copy = copyByVersion[version];
@@ -54,8 +83,8 @@ export function Pains({ version = "v1" }: { version?: Version }) {
     },
     {
       number: "04",
-      title: "El plan de ahorro vive en Excel.",
-      bullets: [
+      title: copy.pain4Override?.title ?? "El plan de ahorro vive en Excel.",
+      bullets: copy.pain4Override?.bullets ?? [
         "El módulo más complejo, sin sistema específico",
         "Cuotas mal cargadas = calidad de cartera falseada",
         "Adjudicados sin seguimiento sistemático",

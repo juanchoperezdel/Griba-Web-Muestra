@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  /* font-display apunta a Inter (el sitio Griba usa Inter con !important en headings) */
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --color-brand-50: #eff6ff;
   --color-brand-100: #dbeafe;
@@ -24,6 +26,37 @@
   --color-accent-500: #f97316;
   --color-accent-600: #ea580c;
   --color-accent-700: #c2410c;
+
+  /* Tokens V3 — alineados a la marca Griba (sitio principal) */
+  /* El sitio griba.com.ar usa fondo NEGRO puro + acento cyan brillante */
+  --color-ink-900: #000000;
+  --color-ink-800: #0a0a0a;
+  --color-ink-700: #141414;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+}
+
+/* Utility class para los headlines display de V3 (Inter Black) — alineado al sitio Griba */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+/* theme-v3: scope que unifica tipografía — el sitio Griba usa SOLO Inter (sin serif).
+   Aplicado al wrapper del LayoutV3, sobrescribe .serif-display por Inter Black
+   sin afectar /v1 ni /v2 (que conservan Instrument Serif italic).
+   El énfasis se da por peso/color, no por cambio de familia. */
+.theme-v3 .serif-display,
+.theme-v3 .serif-display em,
+.theme-v3 .serif-display i {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: -0.035em;
 }
 
 body {

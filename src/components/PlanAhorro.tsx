@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Gauge, ShieldCheck, Plug, Workflow } from "lucide-react";
 
-type Version = "v1" | "v2";
+type Version = "v1" | "v2" | "v3";
 
 const copyByVersion = {
   v1: {
@@ -13,6 +13,11 @@ const copyByVersion = {
     subheadShort: "Y ahí es donde más comisiones se escapan.",
     body:
       "Cuotas mal cargadas, cartera mal medida, suscriptores que caen sin aviso. Cada error es comisión que la fábrica no te paga el mes siguiente. Griba lo controla por vos — cartera, adjudicaciones, scoring, cumplimiento, todo en tiempo real.",
+  },
+  v3: {
+    subheadShort: "Y ahí es donde el mes se gana o se pierde.",
+    body:
+      "Suscriptores que caen sin aviso. Adjudicados sin seguimiento. Reportes a fábrica que llegan después del cierre. Cada error termina en un bono no liquidado. Griba sostiene cartera, adjudicaciones, scoring y cumplimiento en tiempo real, con integración nativa a la intranet de tu fábrica.",
   },
 } as const;
 
