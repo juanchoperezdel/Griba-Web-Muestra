@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { LayoutKit40 } from "./components/kit40/LayoutKit40";
 import { HeroKit40 } from "./components/kit40/HeroKit40";
 import { CalculatorKit40 } from "./components/kit40/CalculatorKit40";
@@ -10,6 +11,16 @@ import { FormKit40 } from "./components/kit40/FormKit40";
 import { FAQKit40 } from "./components/kit40/FAQKit40";
 
 export default function AppKit40() {
+  useEffect(() => {
+    document.title = "Programa KIT 4.0 — Hasta el 50% de tu CRM y ERP lo cubre el Estado | Griba";
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute(
+        "content",
+        "Griba es proveedor habilitado del Programa KIT 4.0: implementá tu CRM y ERP con hasta el 50% del costo cubierto por el Estado (tope ARS 20.000.000). Cupo limitado por orden de presentación. Diagnóstico gratuito.",
+      );
+  }, []);
+
   return (
     <LayoutKit40>
       <HeroKit40 />
