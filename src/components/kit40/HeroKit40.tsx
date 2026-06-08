@@ -7,7 +7,7 @@ const scrollToCalc = () =>
   document.getElementById("calculadora")?.scrollIntoView({ behavior: "smooth" });
 
 const facts = [
-  { value: "Hasta 50%", label: "del costo de tu CRM y ERP lo pone el Estado" },
+  { value: "Hasta 50%", label: "del costo de digitalizar tu gestión lo pone el Estado" },
   { value: "ARS 20M", label: "tope máximo del beneficio por empresa" },
   { value: "Por orden", label: "el que presenta primero, cobra primero" },
 ];
@@ -53,8 +53,9 @@ export function HeroKit40() {
 
             <p className="text-lg text-slate-300 leading-relaxed max-w-xl mb-9">
               La plata ya está asignada: el Programa KIT 4.0 financia hasta la mitad de tu
-              nuevo CRM y ERP. Griba pone el software y hace el trámite por vos. Pero el
-              cupo se reparte por orden de presentación — cuando se agota, se terminó.
+              proyecto de digitalización. Griba es proveedor habilitado — ponemos el
+              software de gestión y hacemos el trámite por vos. Pero el cupo se reparte por
+              orden de presentación: cuando se agota, se terminó.
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">

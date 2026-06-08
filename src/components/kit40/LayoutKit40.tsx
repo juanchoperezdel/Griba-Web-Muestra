@@ -57,8 +57,8 @@ export function LayoutKit40({ children }: { children: ReactNode }) {
           <div className="max-w-md">
             <img src="/griba-logo.png" alt="Griba" className="h-8 w-auto mb-3" />
             <p className="text-slate-400 text-sm leading-relaxed">
-              Griba es proveedor habilitado del Programa KIT 4.0. Implementamos tu CRM
-              y ERP con hasta el 50% del costo cubierto por el Estado.
+              Griba es proveedor habilitado del Programa KIT 4.0. Digitalizá la gestión de
+              tu empresa con hasta el 50% del costo cubierto por el Estado.
             </p>
           </div>
           <div className="flex flex-col items-start md:items-end gap-3 text-xs text-slate-500">
