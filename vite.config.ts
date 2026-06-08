@@ -10,7 +10,7 @@ const spaFallback = (): Plugin => ({
   configureServer(server) {
     server.middlewares.use((req, _res, next) => {
       const url = req.url || '';
-      if (/^\/(v2|v3|v4|gracias)\/?(\?.*)?$/.test(url)) {
+      if (/^\/(v2|v3|v4|kit40|gracias)\/?(\?.*)?$/.test(url)) {
         req.url = '/';
       }
       next();
