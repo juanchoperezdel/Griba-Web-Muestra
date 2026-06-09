@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { WhatsAppFab } from "./WhatsAppFab";
 
 const GRIBA_URLS = {
   home: "https://griba.com.ar/",
@@ -51,6 +52,8 @@ export function LayoutKit40({ children }: { children: ReactNode }) {
       </header>
 
       <main className="flex-grow pt-16">{children}</main>
+
+      <WhatsAppFab />
 
       <footer className="bg-ink-900 py-12 border-t border-white/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
