@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export function HeroV3() {
   const scrollToCalendar = () => {
-    document.getElementById("calendario")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

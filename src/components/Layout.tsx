@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 export function Layout({ children }: { children: ReactNode }) {
   const scrollToCalendar = () => {
-    document.getElementById("calendario")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

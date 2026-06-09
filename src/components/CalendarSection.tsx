@@ -97,12 +97,15 @@ export function CalendarSection({ version = "v1" }: { version?: Version }) {
           </motion.div>
 
           {/* Right Side: Calendar Iframe */}
-          <motion.div 
+          {/* id="agendar" + scroll-mt-24: los CTAs scrollean acá directo (no al título),
+              para que en mobile la gente caiga sobre el selector de fecha. */}
+          <motion.div
+            id="agendar"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full max-w-xl mx-auto"
+            className="w-full max-w-xl mx-auto scroll-mt-24"
           >
             <div className="bg-white rounded-3xl overflow-hidden shadow-2xl p-1 relative min-h-[650px] border-[8px] border-slate-900/50 backdrop-blur-sm">
               <div className="absolute top-0 left-0 w-full h-full bg-white rounded-[20px] flex flex-col items-center justify-center p-6 text-center z-0">

@@ -24,7 +24,7 @@ export function TechSection() {
   ];
 
   const scrollToCalendar = () => {
-    document.getElementById("calendario")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

@@ -12,7 +12,7 @@ export function SectionCTA({
   tone?: Tone;
 }) {
   const scrollToCalendar = () => {
-    document.getElementById("calendario")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const isDark = tone === "dark";

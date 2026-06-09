@@ -13,7 +13,7 @@ export function CTABand({
   variant?: Variant;
 }) {
   const scrollToCalendar = () => {
-    document.getElementById("calendario")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const isDark = variant === "dark";

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { WhatsAppFab } from "./WhatsAppFab";
 
 const GRIBA_URLS = {
   home: "https://griba.com.ar/",
@@ -10,7 +11,7 @@ const GRIBA_URLS = {
 
 export function LayoutV3({ children }: { children: ReactNode }) {
   const scrollToCalendar = () => {
-    document.getElementById("calendario")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -81,6 +82,8 @@ export function LayoutV3({ children }: { children: ReactNode }) {
           </div>
         </div>
       </footer>
+
+      <WhatsAppFab />
     </div>
   );
 }

@@ -23,6 +23,16 @@ export default function AppV4() {
       <HeroV3 />
       <BrandLogos />
 
+      {/* Prueba social arriba de todo: la web es larga y el scroll promedio es
+          ~31%, así que los testimonios van apenas pasado el hero + logos, no
+          enterrados al final donde casi nadie llega. */}
+      <TestimonialsV4 />
+      <SectionCTA
+        text="Tres roles distintos, el mismo resultado. Sumate."
+        cta="Pedir mi caso"
+        tone="dark"
+      />
+
       <ClaimStrip
         lineOne="Si tu operación depende de Excel,"
         lineTwo="no tenés control. Tenés suerte."
@@ -87,13 +97,6 @@ export default function AppV4() {
       <SectionCTA
         text="¿Cómo encaja Griba en tu stack actual? Hablalo con un consultor."
         cta="Hablar con el equipo"
-      />
-
-      <TestimonialsV4 />
-      <SectionCTA
-        text="Tres roles distintos, el mismo resultado. Sumate."
-        cta="Pedir mi caso"
-        tone="dark"
       />
 
       <Process />

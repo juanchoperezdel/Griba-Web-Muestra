@@ -102,7 +102,7 @@ export function FAQ() {
 
         <div className="text-center mt-12">
           <button
-            onClick={() => document.getElementById("calendario")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" })}
             className="inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-4 text-base font-semibold text-white hover:bg-slate-800 transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5"
           >
             ¿Más dudas? Agendá el diagnóstico
