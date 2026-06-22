@@ -23,19 +23,16 @@ export function Testimonials({ version = "v1" }: { version?: Version }) {
       text: "El día 15 ya sé si voy a cumplir el objetivo de fábrica. Antes esperaba al cierre y rezaba. Recuperamos 15 horas semanales del equipo y bajamos varios puntos la morosidad de cartera.",
       author: "Gerente Comercial Plan de Ahorro",
       company: "Concesionario Oficial Multi-marca",
-      avatarId: 11,
     },
     {
       text: "Tengo 3 sucursales. Antes pedía Excels los lunes a las 10 y me llegaban el miércoles. Hoy entro al dashboard 5 minutos y sé exactamente cómo va el negocio entero — ventas, plan, cartera. Cambió todo.",
       author: "Director General",
       company: "Concesionario Oficial Stellantis",
-      avatarId: 68,
     },
     {
       text: "Documentación de API decente, webhooks que funcionan, export completo. Era lo que pedíamos hace años. Lo integramos a nuestro stack BI en dos semanas.",
       author: "Gerente de Sistemas",
       company: "Grupo concesionario multi-marca",
-      avatarId: 33,
     },
   ];
 
@@ -83,18 +80,9 @@ export function Testimonials({ version = "v1" }: { version?: Version }) {
               <p className="text-slate-700 leading-relaxed font-medium mb-8 relative z-10 flex-grow">
                 "{test.text}"
               </p>
-              <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
-                <div className="h-11 w-11 rounded-full border-2 border-white bg-slate-200 overflow-hidden shadow-sm shrink-0">
-                  <img
-                    src={`https://i.pravatar.cc/150?img=${test.avatarId}`}
-                    alt={test.author}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="min-w-0">
-                  <h4 className="text-slate-900 font-bold text-sm leading-tight">{test.author}</h4>
-                  <p className="text-brand-600 font-medium text-xs mt-1 truncate">{test.company}</p>
-                </div>
+              <div className="pt-6 border-t border-slate-100">
+                <h4 className="text-slate-900 font-bold text-sm leading-tight">{test.author}</h4>
+                <p className="text-brand-600 font-medium text-xs mt-1">{test.company}</p>
               </div>
             </motion.div>
           ))}

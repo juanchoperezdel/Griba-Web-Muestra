@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
+/* Las fuentes se cargan desde index.html (<head> con preconnect) para no
+   encadenar la descarga detrás de este CSS y mejorar el LCP. */
 @import "tailwindcss";
 
 @theme {

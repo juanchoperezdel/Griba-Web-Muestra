@@ -1,12 +1,15 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
-import AppV2 from './AppV2.tsx';
-import AppV3 from './AppV3.tsx';
-import AppV4 from './AppV4.tsx';
-import AppKit40 from './AppKit40.tsx';
-import AppThankYou from './AppThankYou.tsx';
 import './index.css';
+
+// Cada versión se carga en su propio chunk: una visita sólo descarga la
+// que corresponde a su ruta, no las 6 (antes iban todas en el bundle).
+const App = lazy(() => import('./App.tsx'));
+const AppV2 = lazy(() => import('./AppV2.tsx'));
+const AppV3 = lazy(() => import('./AppV3.tsx'));
+const AppV4 = lazy(() => import('./AppV4.tsx'));
+const AppKit40 = lazy(() => import('./AppKit40.tsx'));
+const AppThankYou = lazy(() => import('./AppThankYou.tsx'));
 
 const path = window.location.pathname.replace(/\/$/, '');
 
@@ -20,6 +23,8 @@ const Root =
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Root />
+    <Suspense fallback={null}>
+      <Root />
+    </Suspense>
   </StrictMode>,
 );
