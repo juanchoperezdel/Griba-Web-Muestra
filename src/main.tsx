@@ -9,6 +9,7 @@ const AppV2 = lazy(() => import('./AppV2.tsx'));
 const AppV3 = lazy(() => import('./AppV3.tsx'));
 const AppV4 = lazy(() => import('./AppV4.tsx'));
 const AppV5 = lazy(() => import('./AppV5.tsx'));
+const AppV6 = lazy(() => import('./AppV6.tsx'));
 const AppKit40 = lazy(() => import('./AppKit40.tsx'));
 const AppThankYou = lazy(() => import('./AppThankYou.tsx'));
 
@@ -20,6 +21,7 @@ const Root =
   : path === '/v3' ? AppV3
   : path === '/v4' ? AppV4
   : path === '/v5' ? AppV5
+  : path === '/v6' ? AppV6
   : path === '/kit40' ? AppKit40
   : App;
 
