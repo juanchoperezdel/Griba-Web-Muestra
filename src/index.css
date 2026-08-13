@@ -82,3 +82,40 @@ h1, h2, h3, h4, h5, h6 {
 .serif-display i {
   font-style: italic;
 }
+
+/* ── V7 ─────────────────────────────────────────────────────────────────────
+   Animación de entrada a prueba de WebView.
+
+   Todo lo de acá abajo está prefijado con .theme-v7, que sólo pone LayoutV7.
+   V1–V6 no pueden verse afectadas.
+
+   La regla clave es el orden: el estado base de .v7-reveal es VISIBLE. Recién
+   cuando el JS confirma que hay IntersectionObserver y que el usuario no pidió
+   reduced-motion, agrega .js-reveal en el root y habilita el estado oculto.
+   Si el JS no corre, o corre y el observer nunca dispara (lo que pasa en el
+   navegador in-app de Instagram, donde la barra de direcciones colapsable
+   recalcula el viewport), el contenido queda a la vista igual.            */
+.theme-v7 .v7-reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.theme-v7.js-reveal .v7-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.theme-v7.js-reveal .v7-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-v7.js-reveal .v7-reveal,
+  .theme-v7 .v7-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

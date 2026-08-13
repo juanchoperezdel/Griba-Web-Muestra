@@ -1,32 +1,24 @@
 import { useEffect } from "react";
 import { Layout } from "./components/Layout";
 import { ThankYou } from "./components/ThankYou";
+import { setLandingVersion, track } from "./lib/analytics";
 
 export default function AppThankYou() {
   useEffect(() => {
-    // === Tracking de conversión ===
-    // Esta es la página donde se confirma que el lead reservó la demo.
-    // El equipo de tracking puede meter acá los disparos de conversión:
+    // === Conversión ===
+    // Esta es la página a la que redirige el calendario cuando alguien
+    // reserva: es EL evento de conversión de la cuenta.
     //
-    // Meta Pixel:
-    //   if (typeof window.fbq === "function") {
-    //     window.fbq("track", "Schedule");
-    //   }
+    // Durante meses esto fueron comentarios con placeholders (AW-XXXXXXXX),
+    // esperando IDs que nunca llegaron. Meta optimizaba a un evento que no
+    // recibía nunca, y por eso compraba el clic más barato en vez del que
+    // agenda.
     //
-    // Google Ads conversion:
-    //   if (typeof window.gtag === "function") {
-    //     window.gtag("event", "conversion", {
-    //       send_to: "AW-XXXXXXXX/YYYYYYYY",
-    //     });
-    //   }
-    //
-    // GA4 event:
-    //   if (typeof window.gtag === "function") {
-    //     window.gtag("event", "demo_scheduled");
-    //   }
-    //
-    // Una vez que estén los IDs reales (Meta Pixel ID, Google Ads conversion ID),
-    // reemplazar este comentario por las llamadas reales.
+    // Ahora se empuja un evento limpio al dataLayer y los tags de Meta y
+    // Google Ads se cuelgan de acá desde GTM. No hace falta ningún ID en el
+    // código: cuando lleguen, se configuran en GTM y esto no se toca.
+    setLandingVersion("gracias");
+    track("thank_you_view", { conversion_source: "calendar" });
 
     document.title = "Griba — Tu reunión está confirmada";
   }, []);

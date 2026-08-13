@@ -22,6 +22,37 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
+
+    <!--
+      Rescate de arranque. Esta app es una SPA sin prerender: si el bundle no
+      descarga o el JS explota, #root queda vacío y la persona ve una pantalla
+      en blanco. Pasa sobre todo en el navegador in-app de Instagram, por donde
+      entra la mayor parte del tráfico pago.
+
+      Este bloque está oculto y main.tsx lo borra apenas monta. Sólo aparece si
+      a los 6 segundos la app nunca arrancó, y entonces da (a) un camino para
+      reservar igual y (b) el evento app_boot_failed, que es la única forma de
+      saber con qué frecuencia ocurre.
+    -->
+    <div id="boot-fallback" style="display:none;font-family:Inter,system-ui,sans-serif;padding:56px 24px;text-align:center;max-width:520px;margin:0 auto">
+      <p style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0891b2;margin:0 0 12px">Concesionarias · Posventa</p>
+      <p style="font-size:24px;font-weight:800;line-height:1.2;margin:0 0 12px;color:#0f172a">Reactivá la base de clientes que ya te compró.</p>
+      <p style="color:#475569;margin:0 0 28px;line-height:1.5">Media hora con el equipo: miramos tu base y te decimos a cuántos podés recuperar.</p>
+      <a href="https://api.leadconnectorhq.com/widget/booking/ZZBJGS0BBT56DEyRM5t5" style="display:inline-block;background:#06b6d4;color:#062c33;font-weight:700;padding:14px 28px;border-radius:999px;text-decoration:none">Agendar la reunión</a>
+    </div>
+    <noscript><style>#boot-fallback{display:block!important}</style></noscript>
+    <script>
+      setTimeout(function () {
+        if (window.__gribaAppReady) return;
+        var el = document.getElementById('boot-fallback');
+        if (el) el.style.display = 'block';
+        (window.dataLayer = window.dataLayer || []).push({
+          event: 'app_boot_failed',
+          page_path: location.pathname
+        });
+      }, 6000);
+    </script>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
