@@ -57,7 +57,7 @@ export function LayoutV7({ children }: { children: ReactNode }) {
             ctaLocation="header"
             className="inline-flex items-center justify-center rounded-full bg-cyan-500 px-4 sm:px-5 py-2 text-sm font-semibold text-ink-900 hover:bg-cyan-400 transition-all shadow-sm focus:ring-4 focus:ring-cyan-500/30 outline-none shrink-0"
           >
-            Agendar reunión
+            Analizar mi base
           </CTAButton>
         </div>
       </header>

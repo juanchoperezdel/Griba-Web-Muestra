@@ -57,7 +57,7 @@ export function StickyCTA() {
         ctaLocation="sticky_bar"
         className="w-full inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3.5 text-base font-semibold text-ink-900 hover:bg-cyan-400 transition-colors shadow-lg"
       >
-        Reactivar mi base
+        Analizar mi base
       </CTAButton>
     </div>
   );

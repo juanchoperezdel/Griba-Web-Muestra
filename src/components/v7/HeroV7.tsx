@@ -17,7 +17,20 @@ import { CTAButton } from "./CTAButton";
 //   prometer más que el anuncio — cuando pasa, se lee como truco y la persona se va.
 //
 // · SUBHEAD con el lenguaje textual de los ads: "desde el número oficial de tu
-//   concesionaria" (ads 1 y 7) y "sin llamar uno por uno" (ad 5).
+//   concesionaria" (ads 1 y 7) y "sin llamar uno por uno" (ad 5). Dice el
+//   mecanismo, no sólo el problema: en mobile hay que entender qué hace Griba
+//   antes de llegar al botón.
+//   OJO con querer afinarlo más: describir esto como "detecta quién tiene más
+//   chances de volver" sería inventar una capacidad. Griba segmenta por modelo,
+//   fecha de entrega y último service — no hace scoring predictivo. Además
+//   "lead scoring" está en la lista de lenguaje a evitar (market_intel.md:508):
+//   es el claim commodity de AuraCRM, competidor directo.
+//
+// · H1: dice "no volviste a hablarle", no "a buscarlo". Con "buscarlo" el
+//   objeto más cercano es el auto y se pierde medio segundo entendiendo que se
+//   habla del cliente. Arriba del fold ese medio segundo cuesta. Se puede
+//   cambiar libremente porque este H1 NO es literal de ningún anuncio: es
+//   nuestro, viene de HeroV6.
 //
 // · Sin animación de entrada: es el LCP de la página, medido en 4,5s en mobile.
 //   Nada de JS entre el usuario y el titular.
@@ -52,7 +65,7 @@ export function HeroV7() {
             Le entregaste el auto.{" "}
             <br className="hidden md:block" />
             <span className="serif-display italic font-normal text-cyan-400">
-              Y no volviste a buscarlo.
+              Y no volviste a hablarle.
             </span>
           </h1>
 

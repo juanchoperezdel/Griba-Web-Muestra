@@ -3,6 +3,7 @@ import { LayoutV7 } from './components/v7/LayoutV7';
 import { HeroV7 } from './components/v7/HeroV7';
 import { ChatProofV7 } from './components/v7/ChatProofV7';
 import { PainsV7 } from './components/v7/PainsV7';
+import { EconomiaBaseV7 } from './components/v7/EconomiaBaseV7';
 import { CTABandV7 } from './components/v7/CTABandV7';
 import { SolucionV7 } from './components/v7/SolucionV7';
 import { TestimonialsV7 } from './components/v7/TestimonialsV7';
@@ -46,29 +47,40 @@ export default function AppV7() {
 
       <PainsV7 />
 
+      {/* Por qué es económicamente absurdo dejar la base parada. Va acá, entre
+          el dolor y la oferta: el dolor abre la herida, esto la vuelve una
+          cuenta que no cierra, y recién entonces se pide la reunión. */}
+      <EconomiaBaseV7 />
+
       <CTABandV7
-        title="Esa lista ya la tenés cargada. Solo falta salir a buscarla."
-        cta="Reactivar mi base"
+        title="Conseguir esos clientes ya te costó plata. Volver a buscarlos, no."
+        cta="Ver a cuántos puedo recuperar"
         variant="dark"
         ctaId="ctaband_post_pains"
         ctaLocation="cta_band_1"
       />
 
+      {/* #agendar — la oferta, no el final del recorrido.
+          Estaba en la posición 7 de 9. Es el error que en el proyecto hermano
+          costó dos meses de pauta: el calendario en la sección 8 de 9 con
+          scroll promedio 39%. Acá la oferta ("mostranos tu base y te decimos a
+          cuántos podés reactivar") es lo más vendible que tiene la página, así
+          que va apenas cerrado el argumento. Lo que sigue es para el que
+          todavía no se decidió. */}
+      <CalendarV7 />
+
       {/* Mecanismo. Destino del CTA secundario del hero (#solucion). */}
       <SolucionV7 />
 
+      <TestimonialsV7 />
+
       <CTABandV7
         title="Media hora y sabés a cuántos clientes podés recuperar este mes."
-        cta="Agendar la reunión"
+        cta="Analizar mi base"
         variant="light"
         ctaId="ctaband_post_solucion"
         ctaLocation="cta_band_2"
       />
-
-      <TestimonialsV7 />
-
-      {/* #agendar — destino de todos los CTAs. */}
-      <CalendarV7 />
 
       <FAQV7 />
 

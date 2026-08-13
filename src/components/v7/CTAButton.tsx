@@ -10,6 +10,12 @@ import { track } from "../../lib/analytics";
 //
 // Acá cada CTA declara un ctaId estable. El label puede cambiar todas las veces
 // que haga falta sin romper la serie histórica del reporte.
+//
+// Los labels convergen a propósito en tres formulaciones, no nueve: "analizar
+// mi base" (header, sticky, banda final), "ver a cuántos puedo recuperar"
+// (bandas y testimonios) y el verbo del anuncio en el hero. Todas nombran lo
+// que se lleva la persona, no lo que queremos que haga: "agendar una demo" es
+// nuestro objetivo, "saber a cuántos puedo recuperar" es el suyo.
 
 export type CTAId =
   | "header_agendar"

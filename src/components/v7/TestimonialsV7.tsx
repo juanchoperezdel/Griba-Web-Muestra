@@ -90,7 +90,7 @@ export function TestimonialsV7() {
             ctaLocation="testimonials"
             className="inline-flex items-center justify-center rounded-full bg-cyan-500 px-8 py-4 text-base font-semibold text-ink-900 hover:bg-cyan-400 transition-all shadow-md hover:shadow-cyan-500/20 hover:-translate-y-0.5"
           >
-            Ver cómo sería en mi caso
+            Ver a cuántos puedo recuperar
           </CTAButton>
         </div>
       </div>
